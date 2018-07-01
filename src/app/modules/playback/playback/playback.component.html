@@ -1,0 +1,5 @@
+<div class="usa-grid">
+  <div class="usa-section">
+    <app-track *ngFor="let song of upcomingSongs; let i = index" [index]="i" [title]="song.title" [artist]="'Artist'"></app-track>
+  </div>
+</div>

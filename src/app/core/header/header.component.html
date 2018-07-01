@@ -1,0 +1,45 @@
+<a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+<header class="usa-header usa-header-extended" role="banner">
+  <div class="usa-navbar">
+  <div class="usa-logo" id="extended-logo">
+    <em class="usa-logo-text">
+      <a routerLink="/" title="Home" aria-label="Home">
+        Spotify Music Player
+      </a>
+    </em>
+  </div>
+  <button class="usa-menu-btn" (click)="menuExpanded=true">
+    Menu
+  </button>
+</div>
+
+  <nav role="navigation" class="usa-nav" [ngClass]="{'is-visible': menuExpanded }">
+    <div class="usa-nav-inner">
+      <button class="usa-nav-close" (click)="menuExpanded=false">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+      <ul class="usa-nav-primary usa-accordion">
+        <li>
+          <a class="usa-nav-link" routerLink="/comingup">
+            <span>Coming Up</span>
+          </a>
+        </li>
+        <li>
+          <a class="usa-nav-link" routerLink="/search">
+            <span>Search</span>
+          </a>
+        </li>
+        <li>
+          <a class="usa-nav-link" href="javascript:void(0)">
+            <span>Controls</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+<main id="main-content"></main>

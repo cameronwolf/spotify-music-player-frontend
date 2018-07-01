@@ -1,0 +1,19 @@
+<div class="usa-grid usa-section">
+  <form [formGroup]="searchForm" (submit)=trackSearch()>
+    <div class="usa-grid filter-section">
+      <legend class="filter-label">
+        To search for:
+      </legend>
+      <fieldset>
+        <input id="track" type="radio" value="track" class="radio" formControlName="type">
+        <label for="track" class="radio-label">Track</label>
+        <input id="album" type="radio" value="album" class="radio" formControlName="type">
+        <label for="album" class="radio-label">Album</label>
+        <input id="artist" type="radio" value="artist" class="radio" formControlName="type">
+        <label for="artist" class="radio-label">Artist</label>
+      </fieldset>
+    </div>
+    <span>Search: </span><input type="text" formControlName="query"/>
+    <button type="submit">Search</button>
+  </form>
+</div>

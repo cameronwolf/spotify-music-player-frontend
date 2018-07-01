@@ -1,0 +1,24 @@
+.containingDiv {
+  display:flex;
+  flex-flow:row;
+  margin-bottom: 2rem;
+
+  .index {
+    margin: 0;
+    padding-top:2rem;
+    margin-right: 1rem;
+  }
+
+  .innerDiv {
+    display:flex;
+    flex-flow:row;
+
+    .textDiv {
+      margin-left:1rem;
+
+      h5 {
+        margin-top: 0
+      }
+    }
+  }
+}
