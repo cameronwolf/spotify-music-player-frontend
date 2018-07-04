@@ -21,16 +21,25 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
-      this.searchType = this.extractRoute(this.router.url);
-      console.log(`searching ${this.searchType}`);
-      this.search.search(params['query'], this.searchType).subscribe(response => {
-        this.results = response;
-      });
+      if(params.query){
+        this.searchType = this.extractRoute(this.router.url);
+        console.log(`searching ${this.searchType}`);
+        this.search.search(params['query'], this.searchType).subscribe(response => {
+          this.results = response;
+        });
+      }
+      else if(params.albumId){
+        this.searchType = 'album-track';
+        console.log(`getting tracks for ${params.albumId}`);
+        this.search.getTracks(params.albumId).subscribe(tracks => {
+          this.results = tracks;
+        })
+      }
     });
   }
 
   isTrack(){
-    return this.searchType === 'track';
+    return this.searchType === 'track' || this.searchType === 'album-track';
   }
 
   isAlbum(){

@@ -11,6 +11,7 @@ export class AlbumComponent implements OnInit {
 
   @Input() title: String;
   @Input() artist: String;
+  @Input() id: String;
 
   ngOnInit() {
   }
