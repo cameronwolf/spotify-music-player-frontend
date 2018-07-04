@@ -13,4 +13,8 @@ export class TrackComponent {
 
   constructor() { }
 
+  isIndexPresent(){
+    return this.index || this.index === 0;
+  }
+
 }

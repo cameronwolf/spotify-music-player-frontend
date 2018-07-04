@@ -1,5 +1,5 @@
 <div class="containingDiv">
-  <h3 class="index">{{index+1}})</h3>
+  <h3 *ngIf="isIndexPresent()" class="index">{{index+1}})</h3>
   <button>Add to Playback</button>
   <div class="innerDiv">
     <img src="assets/img/filler_album_cover.jpg"/>

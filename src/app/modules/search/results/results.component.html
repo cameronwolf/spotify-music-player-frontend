@@ -2,7 +2,12 @@
   <div class="usa-section">
     <div *ngIf="results">
       <div *ngIf="isTrack()">
-        <app-track *ngFor="let song of results.tracks.items; let i = index" [index]="i" [title]="song.name" [artist]="song.artists[0].name"></app-track>
+        <div *ngIf="searchType === 'album-track'">
+          <app-track *ngFor="let song of results.items" [title]="song.name" [artist]="song.artists[0].name"></app-track>
+        </div>
+        <div *ngIf="searchType !== 'album-track'">
+          <app-track *ngFor="let song of results.tracks.items; let i = index" [index]="i" [title]="song.name" [artist]="song.artists[0].name"></app-track>
+        </div>
       </div>
       <div *ngIf="isAlbum()">
         <app-album *ngFor="let album of results.albums.items" [title]="album.name" [artist]="album.artists[0].name" [id]="album.id"></app-album>
