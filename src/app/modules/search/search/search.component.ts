@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
 
-import { SearchService } from '../../../shared/services/search.service';
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -15,7 +13,7 @@ export class SearchComponent {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    public router: Router
   ) {
       this.searchForm = this.fb.group(
         {

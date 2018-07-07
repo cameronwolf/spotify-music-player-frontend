@@ -17,7 +17,6 @@ export class AuthenticatedComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      // console.log('params[\'jwt\']', params['jwt']);
       this.jwt.saveJwt(params['jwt']);
       this.router.navigate(['/'])
     });

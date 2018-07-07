@@ -10,8 +10,8 @@ import { SearchService } from '../../../shared/services/search.service';
 })
 export class ResultsComponent implements OnInit {
 
-  private trackSearch = false;
-  private searchType
+  trackSearch = false;
+  searchType: String;
   results: any;
   constructor(
     private search: SearchService,
@@ -23,14 +23,12 @@ export class ResultsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(params => {
       if(params.query){
         this.searchType = this.extractRoute(this.router.url);
-        console.log(`searching ${this.searchType}`);
         this.search.search(params['query'], this.searchType).subscribe(response => {
           this.results = response;
         });
       }
       else if(params.albumId){
         this.searchType = 'album-track';
-        console.log(`getting tracks for ${params.albumId}`);
         this.search.getTracks(params.albumId).subscribe(tracks => {
           this.results = tracks;
         })
