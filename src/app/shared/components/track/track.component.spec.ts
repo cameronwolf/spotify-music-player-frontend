@@ -22,4 +22,19 @@ describe('TrackComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('isIndexPresent', () => {
+    it(' should return true for index being 0', () => {
+      component.index = 0;
+      expect(component.isIndexPresent()).toBe(true);
+    });
+    it(' should return false for index being undefined', () => {
+      component.index = undefined;
+      expect(component.isIndexPresent()).toBe(false);
+    });
+    it(' should return false for index being null', () => {
+      component.index = null;
+      expect(component.isIndexPresent()).toBe(false);
+    });
+  });
 });
